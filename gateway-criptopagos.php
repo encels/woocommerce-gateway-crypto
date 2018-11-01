@@ -27,7 +27,7 @@ class WC_Cryptopagos_Gateway extends WC_Payment_Gateway
         $this->accountID   = $this->get_option('accountID');
         $this->apiKey      = $this->get_option('apiKey');
         $this->merchantID  = $this->get_option('merchantID');
-        $this->callbackURL = $this->get_option('callbackURL');
+        $this->callbackURL = get_site_url() . '/wc-api/cryptopagos/';
         
         add_action('woocommerce_update_options_payment_gateways_' . $this->id, array(
             $this,
@@ -92,12 +92,7 @@ class WC_Cryptopagos_Gateway extends WC_Payment_Gateway
                 'title' => 'API Key',
                 'type' => 'text'
             ),
-            'callbackURL' => array(
-                'title' => 'Callback URL',
-                'type' => 'text',
-                'description' => 'Url de Retorno luego de procesado el pago.',
-                'default' => get_site_url() . '/wc-api/cryptopagos/'
-            )
+            
         );
         
     }
