@@ -207,7 +207,7 @@ class WC_Cryptopagos_Gateway extends WC_Payment_Gateway
 
         }
         else{
-       	    $order->update_status('failed', 'La orden fue cancelada, verifique su pago.');
+       	    $order->update_status('failed', 'La orden  no pudo ser procesada, verifique el pago.');
         }
 
         update_option('webhook_debug', $_GET);
