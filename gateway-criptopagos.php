@@ -123,8 +123,9 @@ class WC_Cryptopagos_Gateway extends WC_Payment_Gateway
 			  <input name="merchantID"	type="hidden"	value="<?= $this->merchantID ?>" 	id="mechantID" >
 			  <input name="accountID"	type="hidden"	value="<?= $this->accountID ?>" 	id="accountID" >
 			  <input name="apiKey"		type="hidden"	value="<?= $this->apiKey ?>" 		id="apiKey">
+			  <input name="callbackURL"	type="hidden"	value="<?= $this->callbackURL ?>" 	id="callbackURL">
 			  <input name="amount"		type="hidden"	value="<?= WC()->cart->total ?>" 	id="amount" >
-			  <input name="orderID"		type="hidden"	value="<?= $_GET['order_id'] ?>" "id="orderID" >
+			  <input name="orderID"		type="hidden"	value="<?= $_GET['order_id'] ?>" 	id="orderID" >
 			</form>
 
 <?php
@@ -207,7 +208,7 @@ class WC_Cryptopagos_Gateway extends WC_Payment_Gateway
 
         }
         else{
-       	    $order->update_status('failed', 'La orden  no pudo ser procesada, verifique el pago.');
+       	    $order->update_status('failed', 'La orden no puede ser procesada, verifique su pago.');
         }
 
         update_option('webhook_debug', $_GET);
