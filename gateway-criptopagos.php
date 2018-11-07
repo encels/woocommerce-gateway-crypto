@@ -133,7 +133,7 @@ class WC_Cryptopagos_Gateway extends WC_Payment_Gateway
 					function stateChange() {
 		    			setTimeout(function () {
 		        			document.getElementById("formCrypto").submit();
-		    			},1000);
+		    			},2000);
 					}
 
 					stateChange();
